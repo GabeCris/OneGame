@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ONE - GAME</title>
+        <link
+            rel="shortcut icon"
+            href="./imgs/favicon.svg"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="style/style.css" />
+        <script defer src="script.js"></script>
+    </head>
+    <body onload="cardsCreateCall()">
+        <section id="block" class="unblock"></section>
+        <section class="container">
+            <div class="container-modal close-modal" id="modal-win">
+                <div class="modal">
+                    <h2 id="win-message">PLAYER VENCEU!</h2>
+                    <div class="buttons">
+                        <button onclick="playAgain()" class="button">
+                            Jogar Novamente
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-modal open-modal" id="modal-welcome">
+                <div class="modal">
+                    <h2>SEJA BEM VINDO(A)</h2>
+                    <form class="buttons">
+                        <input
+                            autofocus
+                            id="input-nick"
+                            class="input-login"
+                            maxlength="12"
+                            type="text"
+                            placeholder="Informe seu nick"
+                            autocomplete="off"
+                        />
+                        <button
+                            class="button"
+                            value="ir"
+                            onclick="takeNickPlayer(event)"
+                        >
+                            Ir
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div id="player" class="box-side box-player player-wait">
+                <img src="./imgs/player.svg" alt="PLAYER" />
+                <p class="text" id="nick-player">Player</p>
+                <p class="text" id="contadorPlayer">0</p>
+            </div>
+            <div class="box-game">
+                <span id="span-message" class="span-message hide-span-message" ><img src="./imgs/one-message.svg" alt=""></span>
+                <img
+                    class="reload"
+                    onclick="reloadGame()"
+                    src="./imgs/reload.svg"
+                    alt=""
+                />
+                <ul id="bot-cards"></ul>
+                <ul id="mid-cards">
+                    <li onclick="buyNewCard()" class="cards buy-card gray">
+                        <img src="./imgs/one-card.svg" alt="card logo" />
+                    </li>
+                    <li id="back-mid" class="cards gray back"></li>
+                    <li id="mid" class="cards front yellow">
+                        <p data-number="6" class="number">6</p>
+                    </li>
+                </ul>
+                <ul id="player-cards"></ul>
+                <footer><p>&copyGabeCris</p></footer>
+            </div>
+            <div id="bot" class="box-side box-bot">
+                <img src="./imgs/bot.svg" alt="PLAYER" />
+                <p class="text">Bot</p>
+                <p class="text" id="contadorBot">0</p>
+            </div>
+        </section>
+    </body>
+</html>
