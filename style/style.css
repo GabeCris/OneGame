@@ -263,9 +263,11 @@
 
 .open-modal {
     transform: translateY(0vh);
+    transition: .5s;
 }
 
 .close-modal {
+    transition: .5s;
     transform: translateY(-150vh);
 }
 
