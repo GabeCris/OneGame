@@ -390,7 +390,11 @@
 }
 
 footer {
+    display: flex;
     bottom: 0;
+    z-index: 2;
+    gap: 10px;
+    align-items: center;
     position: absolute;
 }
 
@@ -398,6 +402,36 @@ footer p {
     margin: 5px;
     font-size: 25px;
     color: var(--white-color);
+}
+
+footer::before{
+    transition: .5s;
+    color: white;
+    z-index: 1;
+    font-size: 20px;
+    content: "Dá uma olhadinha ➔";
+    position: absolute;
+    opacity: 0;
+}
+
+footer:hover::before{
+    opacity: 1;
+    transform: translateX(-110%);
+}
+.footer-navigation{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-navigation a{
+    display: flex;
+    align-items: center;
+}
+
+.footer-navigation a img{
+    width: 30px;
+    cursor: pointer;
 }
 
 /* ANIMATIONS */
